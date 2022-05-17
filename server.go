@@ -50,3 +50,14 @@ func (s *WsServer) Start(addr string) error {
 	return router.Run(addr)
 }
 
+func (s *WsServer) OnConnection(f func(connection *ClientConnection)) {
+	s.onConnection = f
+}
+
+func (s *WsServer) OnCloseConnection(f func(connection *ClientConnection)) {
+	s.onCloseConnection = f
+}
+
+func (s *WsServer) OnMessage(f func(message Message, connection *ClientConnection)) {
+	s.onMessage = f
+}
