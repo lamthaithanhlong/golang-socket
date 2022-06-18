@@ -24,3 +24,27 @@ const (
 	maxMessageSize = 64 * 1024	// 64KB
 )
 
+<<<<<<< Updated upstream
+=======
+var (
+	newline = []byte{'\n'}
+	space   = []byte{' '}
+)
+
+type ClientConnection struct {
+	context *gin.Context
+	conn           *websocket.Conn
+	onClose        func()
+	onMessage      func(message Message)
+	data map[string]interface{}
+	mu *sync.Mutex
+}
+
+func NewClientConnection(context *gin.Context, conn *websocket.Conn) *ClientConnection {
+	return &ClientConnection{
+		context: context,
+		conn: conn,
+		mu: &sync.Mutex{},
+	}
+}
+>>>>>>> Stashed changes
