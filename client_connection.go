@@ -24,8 +24,6 @@ const (
 	maxMessageSize = 64 * 1024	// 64KB
 )
 
-<<<<<<< Updated upstream
-=======
 var (
 	newline = []byte{'\n'}
 	space   = []byte{' '}
@@ -47,4 +45,5 @@ func NewClientConnection(context *gin.Context, conn *websocket.Conn) *ClientConn
 		mu: &sync.Mutex{},
 	}
 }
->>>>>>> Stashed changes
+
+
