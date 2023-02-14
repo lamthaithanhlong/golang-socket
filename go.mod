@@ -1,6 +1,5 @@
 module github.com/lamthaithanhlong/golang-socket
 
-
 go 1.14
 
 require (
